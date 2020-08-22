@@ -1,0 +1,66 @@
+<div class="container col-lg-6 offset-lg-3">
+  <form class="form-signin" #form="ngForm" (ngSubmit)="add()">
+    <h2 class="">Add Dog</h2>
+    <div>
+      <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="dog.name">
+    </div>
+    <div>
+      <input type="text" class="form-control" [(ngModel)]="dog.breedName" name="breedName" placeholder="breedName">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="dog.birthday" name="birthday" class="form-control" placeholder="birthday">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="dog.color" name="color" class="form-control" placeholder="color">
+    </div>
+    <div>
+      <label>Gender</label>
+      <p>
+        <input type="radio" value="male" name="gender" [ngModel]="dog.gender"> Male
+        <input type="radio" value="female" name="gender" [ngModel]="dog.gender"> Female
+      </p>
+    </div>
+    <div>
+      <input type="number"  [(ngModel)]="dog.status" name="status" class="form-control"
+             placeholder="status">
+    </div>
+    <div style="padding-top: 10px">
+      <button type="submit" class="btn btn-primary text-center">Add Product</button>
+    </div>
+  </form>
+</div>
+
+
+<div class="container" style="padding-top: 30px">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">BreedName</th>
+      <th scope="col">Color</th>
+      <th scope="col">Status</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Birthday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let list of listDog ">
+      <td>{{list.id}}</td>
+      <td>{{list.name}}</td>
+      <td>{{list.breedName}}</td>
+      <td>{{list.color}}</td>
+      <td>{{list.status}}</td>
+      <td *ngIf="list.gender == 0">Female</td>
+      <td *ngIf="list.gender == 1">Male</td>
+      <td>{{list.birthday}}</td>
+      <button class="btn btn-danger" (click)='deleteDog(list.id)'>Delete</button>
+      <button class="btn btn-primary" [routerLink]="['/edit']" [queryParams]="{ Id: list.id }">
+        Edit
+      </button>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

@@ -1,0 +1,13 @@
+<div class="container container col-lg-6 offset-lg-3">
+  <form class="" #form="ngForm" (ngSubmit)="update()">
+    <h2 class="">Add Product</h2>
+    <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="detailDog.name" value="{{detailDog.name}}">
+    <input type="hidden" class="form-control" placeholder="Id" name="id" [(ngModel)]="detailDog.id" value="{{detailDog.id}}">
+    <input type="text" [(ngModel)]="detailDog.breedName" name="breedName" class="form-control" placeholder="breedName" value="{{detailDog.breedName}}">
+    <input type="text" [(ngModel)]="detailDog.birthday" name="birthday" class="form-control" placeholder="birthday" value="{{detailDog.birthday}}">
+    <input type="text" [(ngModel)]="detailDog.color" name="color" class="form-control" placeholder="color" value="{{detailDog.color}}">
+    <input type="number" [(ngModel)]="detailDog.gender" name="gender" class="form-control" placeholder="gender" value="{{detailDog.gender}}">
+    <input type="number" [(ngModel)]="detailDog.status" name="status" class="form-control" placeholder="status" value="{{detailDog.status}}">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  </form>
+</div>
