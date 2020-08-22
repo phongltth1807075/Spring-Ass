@@ -7,6 +7,7 @@ import {EdithomeComponent} from './edithome/edithome.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'edit', component: EdithomeComponent },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
