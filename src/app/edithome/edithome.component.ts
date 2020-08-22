@@ -34,6 +34,7 @@ export class EdithomeComponent implements OnInit {
   update() {
     this.service.update(this.detailDog, this.DogId).subscribe((response) => console.log(response),
       (error) => console.log(error));
-    this.router.navigate(['/home']);
+    alert('Update Success');
+    return this.router.navigate(['/home']);
   }
 }
